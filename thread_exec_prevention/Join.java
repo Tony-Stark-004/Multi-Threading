@@ -2,7 +2,7 @@ package thread_exec_prevention;
 
 public class Join {
     public static void main(String[] args) throws InterruptedException {
-        MyRunnable r = new MyRunnable();
+        MyRunnableJoin r = new MyRunnableJoin();
         Thread t = new Thread(r);
         t.start();
         t.join();
@@ -15,7 +15,7 @@ public class Join {
 
 
 /* implementing Runnable interface */
-class MyRunnable implements Runnable {
+class MyRunnableJoin implements Runnable {
     @Override
     public void run() {
         for (int i = 1; i <= 10; i++) {
